@@ -1,4 +1,6 @@
 <script>
+	import { onMount } from 'svelte';
+
 	// Public JSON API (no auth required)
 	const API = 'https://jsonplaceholder.typicode.com';
 
@@ -26,8 +28,8 @@
 		}
 	}
 
-	// Fetch on first load
-	$effect(() => {
+	// Fetch once on component mount
+	onMount(() => {
 		fetchData();
 	});
 
